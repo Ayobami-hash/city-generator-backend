@@ -65,12 +65,6 @@ function load_counties_callback() {
     if (isset($_POST['state'])) {
         $state = sanitize_text_field($_POST['state']);
 
-        ?>
-            <script>
-                console.log($state);
-            </script>
-
-        <?php
 
         // Implement logic to fetch counties from the database based on the selected state
         $counties = get_counties_by_state($state);
