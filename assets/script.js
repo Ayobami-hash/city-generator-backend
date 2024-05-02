@@ -16,9 +16,7 @@ jQuery(document).ready(function ($) {
             data: {
                 action: 'load_counties',
                 state: state, // Ensure the state is set
-                // nonce: $('#city_generator_nonce').val(), // Include a valid nonce
-                // nonce: '53460f3c20',
-                _ajax_nonce: city_generator.nonce, // nonce
+                ajax_nonce: $('#city_generator_nonce').val(), // nonce
             },
             success: function (response) {
                 console.log('County response:', response); // Log AJAX response
