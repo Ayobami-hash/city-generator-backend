@@ -1,6 +1,4 @@
 <?php
-// $wpdb->show_errors();
-// error_log('ghcf');
 function city_generator_admin_page_html() {
     ob_start();
     ?>
@@ -10,7 +8,7 @@ function city_generator_admin_page_html() {
     <div id="custom-plugin-container">
         <?php
         // Add nonce to the form
-        // $nonce = wp_create_nonce('city_generator_nonce');
+        $nonce = wp_create_nonce('city_generator_nonce');
         ?>
         <input type="hidden" id="city_generator_nonce" value="<?php echo esc_attr($nonce); ?>"/>
 
@@ -66,6 +64,13 @@ function load_counties_callback() {
     validate_nonce();
     if (isset($_POST['state'])) {
         $state = sanitize_text_field($_POST['state']);
+
+        ?>
+            <script>
+                console.log($state);
+            </script>
+
+        <?php
 
         // Implement logic to fetch counties from the database based on the selected state
         $counties = get_counties_by_state($state);

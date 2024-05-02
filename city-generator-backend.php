@@ -70,7 +70,7 @@
             // Localize script to pass AJAX URL and other data to JavaScript
             wp_localize_script('city-generator-script', 'city_generator', array(
                 'ajax_url' => admin_url('admin-ajax.php'),
-                'nonce' => wp_create_nonce('city_generator_nonce'),
+                // 'nonce' => wp_create_nonce('city_generator_nonce'),
             ));
         }
     }
